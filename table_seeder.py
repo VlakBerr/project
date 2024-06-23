@@ -13,4 +13,9 @@ class TableSeeder:
 
         for product in products:
             cells = []
-            for col in ci
+            for col in products:
+                cells.append(Cell(size=100, col, font_size=15))
+            rows.append(Row(cells))
+
+        return Table(rows)
+        
