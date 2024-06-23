@@ -2,6 +2,8 @@ import pygame
 from table.cell import Cell
 from table.row import Row
 from table.table import Table
+from table_seeder import TableSeeder
+
 WIDTH, HEIGHT = 700, 700
 
 pygame.init()
@@ -15,11 +17,9 @@ while running:
             running = False
 
 
-    cell = Cell(size=200,text= "1",font_size= 25)
-    cell2 = Cell(size=200,text= "2",font_size= 25)
-    cell3 = Cell(size=200,text= "3",font_size= 25)
-    row = Row([cell, cell2, cell3], 35)
-    row2 = Row([cell2, cell3, cell], 35)
-    table = Table([row, row2], 35)
-    table.draw(0, 0, screen)
+    seeder = TableSeeder()
+    table = seeder.generateTable(order_col="price")
+   
+    table.draw(0,0,screen)
+    
     pygame.display.flip()

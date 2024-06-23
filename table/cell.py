@@ -17,7 +17,7 @@ class Cell:
         pg.draw.rect(surface, self._color, rect)
 
         # Рисуем текст
-        text_surface = self._font.render(self._text, True, self._text_color)
+        text_surface = self._font.render(str(self._text), True, self._text_color)
         text_rect = text_surface.get_rect(center=rect.center)
         surface.blit(text_surface, text_rect)
 
